@@ -4,5 +4,19 @@ body {
 
 form {
     display: flex;
-    flex-flow: column;
+        flex-flow: column;
+        gap: 0.5rem;
+        max-width: 26rem;
+        margin: 0 auto;
 }
+
+nav {
+    padding: 1rem;
+        background: silver;
+        margin-bottom: 1rem;
+}
+
+nav a {
+    color: darkcyan;
+}
+
