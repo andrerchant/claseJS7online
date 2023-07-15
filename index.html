@@ -7,12 +7,13 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Clase 7 - Ingresa</h1>
     <nav>
         <a href="register.html"> Regístrate</a>
     </nav>
 
-    <form id='formulario' action="">
+    <h1>Clase 7 - Ingresa</h1>
+
+    <form id='login-form' action="">
 
         <label for="user">Correo:</label>
         <input type="email" name="user" id="user" required>
@@ -21,16 +22,15 @@
         <input type="password" name="pass" id="pass" required>
 
         <button type="submit">
-            Log in
+            Ingresar
         </button>
 
-        <div id="feedback">
-
-        </div>
+        <div id="feedback-login"></div>
     </form>
 
     
     <script src="server.js"></script>
     <script src="script.js"></script>
+    <script src="login.js"></script>
 </body>
 </html>
