@@ -17,12 +17,12 @@ function submitirEvento(event) {
 
 function validacion(user, pass) {
     if (!Boolean(user) && !Boolean(validarCorreo(user))) {
-        mandarError('Tu correo no es válido');
+        mandarError(feedback, 'Tu correo no es válido');
         return;
     }
 
     if (!Boolean(pass)) {
-        mandarError('Contraseña incorrecta');
+        mandarError(feedback, 'Contraseña incorrecta');
         return;
     }
 
