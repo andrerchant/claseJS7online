@@ -10,6 +10,11 @@ form {
         margin: 0 auto;
 }
 
+form button {
+    max-width: 5rem;
+    cursor: pointer;
+}
+
 nav {
     padding: 1rem;
         background: silver;
