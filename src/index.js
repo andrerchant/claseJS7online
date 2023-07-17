@@ -1,13 +1,16 @@
-import {mockedServer} from './server';
-import { LoginService } from './login';
-import { RegisterService } from './registrar';
+import { mockServer } from './js/server';
+import { LoginService } from './js/login';
+import { RegisterService } from './js/registrar';
+import './style.css';
 
 (()=>{
-    const server = new mockedServer();
+    const server = new mockServer();
 
     document.addEventListener('load', ()=>{
         const url = window.location.href;
         let service = null;
+
+        console.log(url)
 
         if(url.includes('register')){
             service = new LoginService(server);

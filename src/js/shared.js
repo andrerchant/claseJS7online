@@ -9,4 +9,4 @@ function validarCorreo(usr) {
         .match(valMail)
 }
 
-export default {mandarError, validarCorreo};
+export {mandarError, validarCorreo};

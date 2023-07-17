@@ -1,4 +1,4 @@
-export default class mockServer {
+export class mockServer {
     ls = window.localStorage;
 
     saveData(itemName, value) {
