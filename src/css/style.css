@@ -1,0 +1,31 @@
+.submit-btn {
+    border: 1px solid green !important;
+    max-width: 10rem;
+    padding: 0.6rem 2rem;
+    margin: 0 auto;
+    margin-top: 0.7rem;
+    cursor: pointer;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+form {
+    display: flex;
+        flex-flow: column;
+        gap: 0.5rem;
+        max-width: 26rem;
+        margin: 0 auto;
+}
+
+nav {
+    padding: 1rem;
+        background: silver;
+        margin-bottom: 1rem;
+}
+
+nav a {
+    color: darkcyan;
+}
+

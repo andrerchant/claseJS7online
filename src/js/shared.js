@@ -1,5 +1,3 @@
-const server = new mockServer();
-
 function mandarError(feedback, msg = 'Error') {
     feedback.innerHTML = `<span style="color: red">${msg}</span>`;
 }
@@ -10,3 +8,5 @@ function validarCorreo(usr) {
         .toLowerCase()
         .match(valMail)
 }
+
+export default {mandarError, validarCorreo};
