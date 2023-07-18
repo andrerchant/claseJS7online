@@ -1,46 +1,50 @@
-import {validarCorreo, mandarError} from './shared';
+import { mandarError } from './shared';
+import { ValidacionForm } from './validacion';
 
 export class LoginService {
-    // Referencias elementos DOM Login
-    formEl = document.querySelector('#login-form');
-    userEl = formEl.querySelector('#user');
-    passEl = formEl.querySelector('#pass');
-    feedback = formEl.querySelector('#feedback-login');
-
+    validacionForm;
+    
     constructor(server) {
         this.server = server;
     }
-
+    
     init() {
-        this.formEl.addEventListener('submit', submitirEvento);
+        // Referencias elementos DOM Login
+        this.formEl = document.querySelector('#login-form');
+        const feedback = document.querySelector('#feedback-login');
+        this.userEl = document.querySelector('#user');
+        this.passEl = document.querySelector('#pass');
+
+        this.validacionForm = new ValidacionForm(feedback);
+
+        this.formEl.addEventListener('submit', event => this.submitirEvento(event));
+        this.userEl.addEventListener('change', event => this.validacionForm.validarCorreo(event.target.value));
+        this.passEl.addEventListener('change', event => this.validacionForm.validarPass(event.target.value, true));
     }
 
 
     submitirEvento(event) {
         event.preventDefault();
-
-        const usuario = this.userEl.value;
+        const user = this.userEl.value;
         const password = this.passEl.value;
+        const isFormValid = this.validacionForm.checkFormValidity();
 
-        this.validacion(usuario, password);
+        if (!isFormValid.length) this.validarDatosLogin(user, password);
+        else this.validacionForm.warn('Error en ' + isFormValid.toString())
     }
 
-    validacion(user, pass) {
-        if (!Boolean(user) && !Boolean(validarCorreo(user))) {
-            mandarError(this.feedback, 'Tu correo no es válido');
-            return;
-        }
-
-        if (!Boolean(pass)) {
-            mandarError(this.feedback, 'Contraseña incorrecta');
-            return;
-        }
-
+    /**
+     * 
+     * @todo Conectar con server y confirmar password de usuario
+     * @param {string} user 
+     * @param {string} pass 
+     */
+    validarDatosLogin(user, pass) {
         this.login(user);
     }
 
     login(user) {
         alert(`Bienvenido ${user}`);
-        mandarError('');
+        this.validacionForm.cleanError()
     }
 }

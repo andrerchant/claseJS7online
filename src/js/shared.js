@@ -1,12 +1,11 @@
 function mandarError(feedback, msg = 'Error') {
-    feedback.innerHTML = `<span style="color: red">${msg}</span>`;
+    feedback.innerHTML = `<span class="feedback"> ⚠️ ${msg}</span>`;
 }
 
-function validarCorreo(usr) {
-    const valMail = /^\S+@\S+\.\S+$/;
-    return String(usr)
-        .toLowerCase()
-        .match(valMail)
+const LinkEnum = {
+    HOME: 0,
+    LOGIN: 1,
+    REGISTER: 2   
 }
 
-export {mandarError, validarCorreo};
+export { mandarError, LinkEnum };
