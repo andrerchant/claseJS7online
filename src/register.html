@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= htmlWebpackPlugin.options.title %>
+    </title>
+</head>
+<body>
+    <nav>
+        <a href="/"> 🏠 Inicio</a>
+        <a href="login.html"> 👤 Iniciar sesión</a>
+        <a href="register.html"> ✍️ Regístrate </a>
+    </nav>
+
+    <h1>Registrar </h1>
+    <form id="register-form" action="">
+
+        <label for="user">
+            <span class="dynamic-label"> Correo: </span>
+            <input placeholder=" " type="email" name="user" id="user" autocomplete="off" required>
+        </label>
+        
+        <label for="pass">
+            <span class="dynamic-label"> Contraseña </span>
+            <input placeholder=" " type="password" name="pass" id="pass" required>
+        </label>
+
+        <label for="confirmPass">
+            <span class="dynamic-label"> Confirmar contraseña </span>
+            <input placeholder=" " type="password" name="confirmPass" id="confirmPass" required>
+        </label>
+        
+        <div id="feedback-registrar"></div>
+        <div class="action">
+            <button type="submit">
+                Registrar
+            </button>
+        
+            <button type="reset">
+                Limpiar
+            </button>
+        </div>
+        
+    </form>
+</body>
+</html>
